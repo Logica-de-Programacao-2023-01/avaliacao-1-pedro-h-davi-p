@@ -9,7 +9,25 @@ package q4
 //estiver em ordem decrescente e 3 se a lista estiver aleatória. A função deve retornar um erro se a lista estiver vazia.
 //Caso a lista possua apenas um elemento, a função deve retornar 3.
 
-func ClassifyPrices(prices []int) (int, error) {
-	// Seu código aqui
-	return 0, nil
+func ClassifyPrices(prices []int) (int, error){
+	if len(prices) <= 1{
+		return 3,nil
+	}
+
+	asc :=true
+	desc :=true
+	for i := 1; i < len(prices); i++{
+		if prices[i] > prices[i-1]{
+			desc = false
+		} else if prices[i] < prices[i-1]{
+			asc =false
+		}
+	}
+        if asc {
+	return 1, nil
+	} else if desc{
+	return 2, nil
+	} else{
+	return 3, nil
+	}
 }
