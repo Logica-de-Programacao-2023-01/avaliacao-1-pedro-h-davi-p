@@ -14,5 +14,6 @@ package q3
 
 func DominoPieces(m, n int) (int, error) {
 	// Seu código aqui
+
 	return 0, nil
 }
