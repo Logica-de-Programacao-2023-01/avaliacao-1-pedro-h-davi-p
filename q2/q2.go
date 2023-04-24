@@ -10,9 +10,21 @@ package q2
 //Tônia, respectivamente, sobre o i-ésimo problema. O valor "true" indica que o amigo tem certeza da solução, e "false"
 //indica o contrário.
 //
-//Ajude os amigos a encontrar o número de problemas para os quais eles escreverão uma solução.
+//Ajude os amigos a encontrar o número de problemas para os quais eles escreverão uma solução
 
 func ProblemsSolved(answers [][3]bool) int {
-	// Seu código aqui
-	return 0
+	n := len(answers)
+	problemascorretos := 0
+	for i := 0; i < n; i++ {
+		numCerteza := 0
+		for j := 0; j < 3; j++ {
+			if answers[i][j] {
+				numCerteza++
+			}
+		}
+		if numCerteza >= 2 {
+			problemascorretos++
+		}
+	}
+	return problemascorretos
 }
